@@ -1,4 +1,5 @@
 import { Calendar, Tag, X } from "lucide-react";
+import { Button } from "../../components/button";
 
 interface CreateActiveModalProps {
   closeCreateActivityModal: () => void
@@ -43,9 +44,9 @@ export function CreateActiveModal({
             />
           </div>
 
-          <button className="bg-lime-300 text-lime-950 px-5 py-2 rounded-lg font-medium flex items-center gap-2 hover:bg-lime-400">
+          <Button size="full">
             Salvar atividade
-          </button>
+          </Button>
         </form>
       </div>
     </div>
