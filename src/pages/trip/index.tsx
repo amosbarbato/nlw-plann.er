@@ -5,11 +5,9 @@ import { ImportantLinks } from "./important-links";
 import { Guests } from "./guests";
 import { useState } from "react";
 import { CreateActiveModal } from "./create-activity-modal";
-import { AddImportantLinksModal } from "./create-link-modal";
 
 export function TripPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false)
-  const [isAddImportantLinksModalOpen, setIsAddImportantLinksModalOpen] = useState(false)
 
   function openCreateActivityModal() {
     setIsCreateActivityModalOpen(true)

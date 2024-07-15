@@ -2,8 +2,8 @@ import { CircleCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
-import { format, isValid, parseISO } from "date-fns";
-import { formatDate } from "date-fns/format";
+import { format } from "date-fns";
+
 import { ptBR } from "date-fns/locale";
 
 interface ActivitiesProps {

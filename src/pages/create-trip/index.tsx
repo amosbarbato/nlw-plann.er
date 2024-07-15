@@ -51,24 +51,19 @@ export function CreateTripPage() {
     const data = new FormData(event.currentTarget)
     const email = data.get('email')?.toString()
 
-    if (!email) {
-      return
-    }
+    if (!email) return
 
-    if (emailsToInvite.includes(email)) {
-      return
-    }
+    if (emailsToInvite.includes(email)) return
 
-    setEmailsToInvite([
-      ...emailsToInvite,
-      email
-    ])
+    setEmailsToInvite([...emailsToInvite, email])
 
     event.currentTarget.reset()
   }
 
   function removeEmailFromInvites(emailToRemove: string) {
-    const newEmailList = emailsToInvite.filter(email => email !== emailToRemove)
+    const newEmailList = emailsToInvite.filter(
+      (email) => email !== emailToRemove
+    )
 
     setEmailsToInvite(newEmailList)
   }
@@ -134,7 +129,12 @@ export function CreateTripPage() {
         </div>
 
         <p className="text-zinc-500">
-          Ao planejar sua viagem pela plann.er você automaticamente concorda <br /> com nossos <a href="#" className="text-zinc-300">termos de uso</a> e <a href="#" className="text-zinc-300">políticas de privacidade.</a>
+          Ao planejar sua viagem pela plann.er você automaticamente concorda{" "}
+          <br /> com nossos{" "}
+          <a href="#" className="text-zinc-300">termos de uso</a>{" "}
+          e{" "}
+          <a href="#" className="text-zinc-300">políticas de privacidade</a>{" "}
+          .
         </p>
       </div>
 
