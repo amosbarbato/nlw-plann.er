@@ -30,7 +30,7 @@ export function CreateLinkModal({
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
-      <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
+      <div className="w-[640px] max-md:w-full max-md:absolute max-md:bottom-0 md:rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">Cadastrar link</h2>
@@ -49,7 +49,7 @@ export function CreateLinkModal({
             <input
               name="title"
               placeholder="Titulo do link"
-              className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
+              className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1 max-md:text-base"
             />
           </div>
 
@@ -59,7 +59,7 @@ export function CreateLinkModal({
               type="url"
               name="url"
               placeholder="URL"
-              className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1 "
+              className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1 max-md:text-base"
             />
           </div>
 

@@ -42,20 +42,20 @@ export function LocalAndDateStep({
 
 
   return (
-    <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-5">
+    <div className="md:h-16 max-md:py-4 bg-zinc-900 px-4 rounded-xl md:flex items-center shadow-shape gap-5 max-md:space-y-5">
       <div className="flex items-center gap-2 flex-1">
         <MapPin className="size-5 text-zinc-400" />
         <input
           disabled={isGuestInputOpen}
           type="text"
           placeholder="Para onde você vai?"
-          className="bg-transparent text-lg placeholder-zinc-400 outline-none"
+          className="bg-transparent md:text-lg placeholder-zinc-400 outline-none"
           onChange={event => setDestination(event.target.value)}
         />
       </div>
       <button onClick={openDatePicker} disabled={isGuestInputOpen} className="flex items-center gap-2 outline-none">
         <Calendar className="size-5 text-zinc-400" />
-        <span className="text-lg text-zinc-400 w-43 text-left flex-1">
+        <span className="md:text-lg text-zinc-400 w-43 text-left flex-1">
           {displayDate || 'Quando?'}
         </span>
       </button>
@@ -110,7 +110,7 @@ export function LocalAndDateStep({
         </div>
       )}
 
-      <div className="w-px h-6 bg-zinc-800" />
+      <div className="w-px h-6 bg-zinc-800 max-md:hidden" />
 
       {isGuestInputOpen ? (
         <Button onClick={closeGuestInput} variant="secondary">

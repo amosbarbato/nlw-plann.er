@@ -5,8 +5,7 @@ import { api } from "../../../lib/axios";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
-import { Button } from "../../../components/button";
-import { Calendar, MapPin, Settings2 } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
 interface Trip {
   id: string
@@ -33,24 +32,17 @@ export function LocalAndDateHeader() {
 
 
   return (
-    <div className="px-4 h-16 rounded-xl bg-zinc-900 shadow-shape flex items-center justify-between">
+    <div className="px-4 h-16 max-md:h-14 rounded-xl bg-zinc-900 shadow-shape flex items-center justify-between">
       <div className="flex items-center gap-2">
         <MapPin className="text-zinc-400 size-5" />
-        <span className="text-zinc-100 capitalize">{trip?.destination}</span>
+        <span className="text-zinc-100 capitalize max-md:text-sm">{trip?.destination}</span>
       </div>
 
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-2">
-          <Calendar className="text-zinc-400 size-5" />
-          <span className="text-zinc-100">{displayedDate}</span>
+          <Calendar className="text-zinc-400 size-5 flex-1" />
+          <span className="text-zinc-100 max-md:text-sm">{displayedDate}</span>
         </div>
-
-        <div className="w-px h-6 bg-zinc-800" />
-
-        <Button variant="secondary">
-          Alterar local/data
-          <Settings2 className="size-5" />
-        </Button>
       </div>
     </div>
   )

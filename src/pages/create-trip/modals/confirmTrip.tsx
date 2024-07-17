@@ -19,7 +19,7 @@ export function ConfirmTripModal({
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
-      <div className="w-[540px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
+      <div className="md:w-[540px] max-md:absolute max-md:w-full max-md:bottom-0 md:rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <h2>Confirmar criação de viagem</h2>

@@ -34,36 +34,38 @@ export function Guests() {
 
 
   return (
-    <div className="space-y-6">
-      <h2 className="font-semibold text-xl">Convidados</h2>
+    <div className="">
+      <div className="space-y-6">
+        <h2 className="font-semibold text-xl">Convidados</h2>
 
-      <div className="space-y-5">
-        {tripGuests && tripGuests.map((guests, index) => {
-          return (
-            <div key={guests.id} className="flex items-center justify-between gap-4">
-              <div className="space-y-1.5">
-                <span className="block font-medium text-zinc-100">
-                  {guests.name ?? `Convidado ${index}`}
-                </span>
-                <span className="block text-sm text-zinc-400 truncate">
-                  {guests.email}
-                </span>
+        <div className="space-y-5">
+          {tripGuests && tripGuests.map((guests, index) => {
+            return (
+              <div key={guests.id} className="flex items-center justify-between gap-4">
+                <div className="space-y-1.5">
+                  <span className="block font-medium text-zinc-100">
+                    {guests.name ?? `Convidado ${index}`}
+                  </span>
+                  <span className="block text-sm text-zinc-400 truncate">
+                    {guests.email}
+                  </span>
+                </div>
+
+                {guests.is_confirmed ? (
+                  <CheckCircle className="size-6 shrink-0 text-green-400" />
+                ) : (
+                  <CircleDashed className="text-zinc-400 size-5 shrink-0" />
+                )}
               </div>
+            )
+          })}
+        </div>
 
-              {guests.is_confirmed ? (
-                <CheckCircle className="size-6 shrink-0 text-green-400" />
-              ) : (
-                <CircleDashed className="text-zinc-400 size-5 shrink-0" />
-              )}
-            </div>
-          )
-        })}
+        <Button onClick={openInviteSomeoneModal} variant="secondary" size="full">
+          <UserCog className="size-5" />
+          Gerenciar convidados
+        </Button>
       </div>
-
-      <Button onClick={openInviteSomeoneModal} variant="secondary" size="full">
-        <UserCog className="size-5" />
-        Gerenciar convidados
-      </Button>
 
       {isInviteSomeoneModalOpen && (
         <InviteSomeoneModal closeInviteSomeoneModal={closeInviteSomeoneModal} />

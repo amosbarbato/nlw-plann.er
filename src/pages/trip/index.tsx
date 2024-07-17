@@ -20,26 +20,31 @@ export function TripPage() {
 
 
   return (
-    <div className="max-w-6xl px-6 py-10 mx-auto space-y-8">
-      <LocalAndDateHeader />
+    <div className="max-w-6xl px-6 py-10 max-md:py-6 mx-auto">
+      <div className="space-y-8">
+        <LocalAndDateHeader />
 
-      <main className="flex gap-16 px-4">
-        <div className="flex-1 space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-semibold">Atividades</h2>
-            <button onClick={openCreateActivityModal} className="bg-lime-300 text-lime-950 px-5 py-2 rounded-lg font-medium flex items-center gap-2 hover:bg-lime-400">
-              <Plus className="size-5" />
-              Cadastrar atividade
-            </button>
+        <main className="md:flex gap-16 md:px-4 max-md:space-y-8">
+          <div className="flex-1 space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-3xl font-semibold max-md:text-xl">Atividades</h2>
+              <button onClick={openCreateActivityModal} className="bg-lime-300 text-lime-950 px-5 py-2 rounded-lg font-medium flex items-center gap-2 hover:bg-lime-400">
+                <Plus className="size-5" />
+                <p className="max-md:hidden">Cadastrar atividade</p>
+              </button>
+            </div>
+            <Activities />
           </div>
-          <Activities />
-        </div>
-        <div className="w-80 space-y-6">
-          <ImportantLinks />
-          <div className="w-full h-px bg-zinc-800" />
-          <Guests />
-        </div>
-      </main>
+
+          <div className="w-full h-px bg-zinc-800 md:hidden" />
+
+          <div className="w-80 space-y-6 max-md:space-y-8">
+            <ImportantLinks />
+            <div className="w-full h-px bg-zinc-800" />
+            <Guests />
+          </div>
+        </main>
+      </div>
 
       {isCreateActivityModalOpen && (
         <CreateActiveModal

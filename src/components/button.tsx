@@ -11,7 +11,7 @@ const buttonVariants = tv({
     },
 
     size: {
-      default: 'py-2',
+      default: 'py-2 max-md:w-full max-md:text-sm',
       full: 'w-full h-11'
     }
   },
