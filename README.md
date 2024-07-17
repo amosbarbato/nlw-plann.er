@@ -26,10 +26,10 @@ cd <nome-do-repositório>
 npm install
 ```
 
-5. Rode o servidor e web com
+5. Rode o site
 ```
 npm run dev
 ```
 
-7. Pronto! Estarão disponíveis no localhost padrão ✅
+6. Pronto! Estarão disponíveis no localhost padrão ✅
 
