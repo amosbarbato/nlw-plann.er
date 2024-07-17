@@ -1,6 +1,7 @@
-import { AtSign, Plus, X } from "lucide-react"
 import { FormEvent } from "react"
-import { Button } from "../../components/button"
+
+import { Button } from "../../../components/button"
+import { AtSign, Plus, X } from "lucide-react"
 
 interface InviteGuestModalProps {
   closeGuestModal: () => void

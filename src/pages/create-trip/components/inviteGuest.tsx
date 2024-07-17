@@ -1,17 +1,18 @@
-import { ArrowRight, UserRoundPlus } from "lucide-react";
 import { Button } from "../../../components/button";
+import { ArrowRight, UserRoundPlus } from "lucide-react";
 
 interface InviteGuestStepProps {
   openGuestModal: () => void
-  emailsToInvite: string[]
   openConfirmTripModal: () => void
+  emailsToInvite: string[]
 }
 
 export function InviteGuestStep({
   openGuestModal,
-  emailsToInvite,
-  openConfirmTripModal
+  openConfirmTripModal,
+  emailsToInvite
 }: InviteGuestStepProps) {
+
   return (
     <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-5">
       <button type="button" onClick={openGuestModal} className="flex items-center gap-2 flex-1">

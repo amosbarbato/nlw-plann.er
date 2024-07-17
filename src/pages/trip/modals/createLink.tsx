@@ -1,8 +1,10 @@
-import { X, Tag, Link2 } from "lucide-react";
-import { Button } from "../../components/button";
 import { FormEvent } from "react";
-import { api } from "../../lib/axios";
 import { useParams } from "react-router-dom";
+
+import { api } from "../../../lib/axios";
+
+import { Button } from "../../../components/button";
+import { X, Tag, Link2 } from "lucide-react";
 
 interface CreateLinkModalProps {
   closeCreateLinkModal: () => void,
@@ -24,6 +26,7 @@ export function CreateLinkModal({
 
     window.document.location.reload()
   }
+
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">

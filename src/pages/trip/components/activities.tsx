@@ -1,10 +1,11 @@
-import { CircleCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { api } from "../../lib/axios";
-import { format } from "date-fns";
 
+import { api } from "../../../lib/axios";
+import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+
+import { CircleCheck } from "lucide-react";
 
 interface ActivitiesProps {
   date: string,
@@ -23,6 +24,7 @@ export function Activities() {
     api.get(`trips/${tripId}/activities`)
       .then(response => { setActivities(response.data.activities) })
   }, [tripId])
+
 
   return (
     <ul className="space-y-8">

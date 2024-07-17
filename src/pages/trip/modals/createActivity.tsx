@@ -1,8 +1,10 @@
-import { Calendar, Tag, X } from "lucide-react";
-import { Button } from "../../components/button";
-import { useParams } from "react-router-dom";
 import { FormEvent } from "react";
-import { api } from "../../lib/axios";
+import { useParams } from "react-router-dom";
+
+import { api } from "../../../lib/axios";
+
+import { Button } from "../../../components/button";
+import { Calendar, Tag, X } from "lucide-react";
 
 interface CreateActiveModalProps {
   closeCreateActivityModal: () => void
@@ -29,6 +31,7 @@ export function CreateActiveModal({
     window.document.location.reload()
   }
 
+
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
       <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
@@ -39,7 +42,6 @@ export function CreateActiveModal({
               <X className="size-5 text-zinc-400" onClick={closeCreateActivityModal} />
             </button>
           </div>
-
           <p className="text-sm text-zinc-400">
             Todos convidados podem visualizar as atividades.
           </p>

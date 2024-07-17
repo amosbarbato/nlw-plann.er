@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
+import { useParams } from "react-router-dom";
 
+import { api } from "../../../lib/axios";
+
+import { Button } from "../../../components/button";
+import { CreateLinkModal } from "../modals/createLink";
 import { Link2, Plus } from "lucide-react";
-import { Button } from "../../components/button";
-import { CreateLinkModal } from "./create-link-modal";
 
 interface Link {
   id: string
@@ -27,6 +28,7 @@ export function ImportantLinks() {
   useEffect(() => {
     api.get(`trips/${tripId}/links`).then(response => setLinks(response.data.links))
   }, [tripId])
+
 
   return (
     <div className="space-y-6">

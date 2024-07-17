@@ -14,4 +14,5 @@ input {
   --rdp-accent-color: #bef264;
   --rdp-background-color: #27272a;
   --rdp-selected-color: #1a2e05;
+  margin: 0;
 }

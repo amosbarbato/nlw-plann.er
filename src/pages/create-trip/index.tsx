@@ -1,11 +1,13 @@
 import { FormEvent, useState } from "react"
-import { InviteGuestModal } from "./invite-guest-modal"
-import { ConfirmTripModal } from "./confirm-trip-modal"
 import { useNavigate } from "react-router-dom"
-import { LocalAndDateStep } from "./steps/local-and-date-step"
-import { InviteGuestStep } from "./steps/invite-guest-step"
-import { DateRange } from "react-day-picker"
+
 import { api } from "../../lib/axios"
+import { DateRange } from "react-day-picker"
+
+import { LocalAndDateStep } from "./components/inputLocalAndDate"
+import { InviteGuestStep } from "./components/inviteGuest"
+import { InviteGuestModal } from "./modals/inviteGuest"
+import { ConfirmTripModal } from "./modals/confirmTrip"
 
 export function CreateTripPage() {
   const navigate = useNavigate()
@@ -19,7 +21,7 @@ export function CreateTripPage() {
   const [ownerEmail, setOwnerEmail] = useState('')
   const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
 
-  const [emailsToInvite, setEmailsToInvite] = useState()
+  const [emailsToInvite, setEmailsToInvite] = useState([])
 
   function openGuestInput() {
     setIsGuestInputOpen(true)
@@ -100,6 +102,7 @@ export function CreateTripPage() {
 
     navigate(`/trips/${tripId}`)
   }
+
 
   return (
     <div className="h-screen flex items-center justify-center bg-pattern bg-no-repeat bg-center">

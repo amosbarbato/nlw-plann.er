@@ -1,6 +1,7 @@
-import { Mail, User, X } from "lucide-react"
 import { FormEvent } from "react"
-import { Button } from "../../components/button"
+
+import { Button } from "../../../components/button"
+import { Mail, User, X } from "lucide-react"
 
 interface ConfirmTripModalProps {
   closeConfirmTripModal: () => void
@@ -15,6 +16,7 @@ export function ConfirmTripModal({
   setOwnerName,
   setOwnerEmail
 }: ConfirmTripModalProps) {
+
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
       <div className="w-[540px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
@@ -26,7 +28,7 @@ export function ConfirmTripModal({
             </button>
           </div>
           <p className="text-sm text-zinc-400 text-left">
-            Para concluir a criação da viagem para <span className="font-semibold text-zinc-100">Florianópolis, Brasil</span> nas datas de <span className="font-semibold text-zinc-100">16 a 27 de Agosto de 2024</span> preencha seus dados abaixo:
+            Para concluir a criação da viagem preencha seus dados abaixo:
           </p>
         </div>
 

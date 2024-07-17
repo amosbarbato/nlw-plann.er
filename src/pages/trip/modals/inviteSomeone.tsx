@@ -1,8 +1,10 @@
-import { AtSign, Plus, X } from "lucide-react";
-import { Button } from "../../components/button";
-import { useParams } from "react-router-dom";
 import { FormEvent } from "react";
-import { api } from "../../lib/axios";
+import { useParams } from "react-router-dom";
+
+import { api } from "../../../lib/axios";
+
+import { Button } from "../../../components/button";
+import { AtSign, Plus, X } from "lucide-react";
 
 interface InviteSomeoneModalProps {
   closeInviteSomeoneModal: () => void;
@@ -25,6 +27,7 @@ export function InviteSomeoneModal({
 
     window.document.location.reload();
   }
+
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">

@@ -1,10 +1,12 @@
-import { Calendar, MapPin, Settings2 } from "lucide-react";
-import { Button } from "../../components/button";
-import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
+import { useParams } from 'react-router-dom'
+
+import { api } from "../../../lib/axios";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+
+import { Button } from "../../../components/button";
+import { Calendar, MapPin, Settings2 } from "lucide-react";
 
 interface Trip {
   id: string
@@ -28,6 +30,7 @@ export function LocalAndDateHeader() {
       .concat(' até ')
       .concat(format(trip.ends_at, "d ' de ' LLL", { locale: ptBR }))
     : null
+
 
   return (
     <div className="px-4 h-16 rounded-xl bg-zinc-900 shadow-shape flex items-center justify-between">

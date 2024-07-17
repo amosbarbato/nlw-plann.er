@@ -1,10 +1,11 @@
-import { Plus } from "lucide-react";
-import { LocalAndDateHeader } from "./local-and-date-header";
-import { Activities } from "./activities";
-import { ImportantLinks } from "./important-links";
-import { Guests } from "./guests";
 import { useState } from "react";
-import { CreateActiveModal } from "./create-activity-modal";
+
+import { LocalAndDateHeader } from "./components/header";
+import { Activities } from "./components/activities";
+import { ImportantLinks } from "./components/links";
+import { Guests } from "./components/guests";
+import { CreateActiveModal } from "./modals/createActivity";
+import { Plus } from "lucide-react";
 
 export function TripPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false)
@@ -16,6 +17,7 @@ export function TripPage() {
   function closeCreateActivityModal() {
     setIsCreateActivityModalOpen(false)
   }
+
 
   return (
     <div className="max-w-6xl px-6 py-10 mx-auto space-y-8">

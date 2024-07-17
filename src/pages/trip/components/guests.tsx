@@ -1,9 +1,11 @@
-import { CheckCircle, CircleDashed, UserCog } from "lucide-react";
-import { Button } from "../../components/button";
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
-import { InviteSomeoneModal } from "./invite-someone-modal";
+import { useParams } from "react-router-dom";
+
+import { api } from "../../../lib/axios";
+
+import { Button } from "../../../components/button";
+import { InviteSomeoneModal } from "../modals/inviteSomeone";
+import { CheckCircle, CircleDashed, UserCog } from "lucide-react";
 
 interface GuestsProps {
   id: string
@@ -30,6 +32,7 @@ export function Guests() {
       .then(response => { setTripGuests(response.data.participants) })
   }, [tripId])
 
+
   return (
     <div className="space-y-6">
       <h2 className="font-semibold text-xl">Convidados</h2>
@@ -50,7 +53,7 @@ export function Guests() {
               {guests.is_confirmed ? (
                 <CheckCircle className="size-6 shrink-0 text-green-400" />
               ) : (
-                  <CircleDashed className="text-zinc-400 size-5 shrink-0" />
+                <CircleDashed className="text-zinc-400 size-5 shrink-0" />
               )}
             </div>
           )
